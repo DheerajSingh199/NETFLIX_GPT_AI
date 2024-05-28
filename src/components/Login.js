@@ -4,15 +4,20 @@ import { Validate } from "../utils/Validate.js";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase.js";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice.js";
 
 const Login = () => {
   const [IsSingInFrom, setIsSingInFrom] = useState(true);
   const [ErrMessage, setErrMessage] = useState(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
+  const name = useRef(null);
   const email = useRef(null);
   const Ispassword = useRef(null);
 
@@ -32,11 +37,27 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
+          updateProfile(user, {
+            displayName: name.current.value,
+            photoURL:
+              "https://avatars.githubusercontent.com/u/157529918?s=400&u=72599d4ab3e63644e5e1039f56622da5bcd73972&v=4",
+          })
+            .then(() => {
+              const { uid, displayName, email, photoURL } = auth.currentUser;
+              dispatch(
+            addUser({
+              uid: uid,
+              displayName: displayName,
+              email: email,
+              photoURL: photoURL,
+            })
+          );
 
-          console.log(user);
-          navigate("/browse");
-
-          // ...
+              navigate("/browse");
+            })
+            .catch((error) => {
+              setErrMessage(error);
+            });
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -90,6 +111,7 @@ const Login = () => {
         </h1>
         {!IsSingInFrom && (
           <input
+            ref={name}
             className="p-4 mt-4 block w-5/6 ml-5 text-white bg-gray-900"
             type="text"
             placeholder="Name"

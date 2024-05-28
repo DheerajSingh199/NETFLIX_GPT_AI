@@ -27,9 +27,14 @@ const Body = () => {
       auth,
       (user) => {
         if (user) {
-          const { uid, displayName, email } = user;
+          const { uid, displayName, email, photoURL } = user;
           dispatch(
-            addUser({ uid: uid, displayName: displayName, email: email })
+            addUser({
+              uid: uid,
+              displayName: displayName,
+              email: email,
+              photoURL: photoURL,
+            })
           );
         } else {
           dispatch(removeUser());
