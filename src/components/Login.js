@@ -1,10 +1,17 @@
 import React, { useState, useRef } from "react";
 import Header from "./Header.js";
 import { Validate } from "../utils/Validate.js";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/firebase.js";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [IsSingInFrom, setIsSingInFrom] = useState(true);
   const [ErrMessage, setErrMessage] = useState(null);
+  const navigate = useNavigate();
 
   const email = useRef(null);
   const Ispassword = useRef(null);
@@ -12,7 +19,52 @@ const Login = () => {
   const handleButtonClick = () => {
     const message = Validate(email.current.value, Ispassword.current.value);
     setErrMessage(message);
-    console.log(message);
+
+    if (message) return;
+
+    if (!IsSingInFrom) {
+      //Sign Up
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        Ispassword.current.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+
+          console.log(user);
+          navigate("/browse");
+
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode, errorMessage);
+          setErrMessage(errorCode + "-" + errorMessage);
+        });
+    } else {
+      //Sign In
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        Ispassword.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          navigate("/browse");
+
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrMessage(errorCode + "-" + errorMessage);
+        });
+    }
   };
 
   const toggleSingInFrom = () => {
@@ -29,7 +81,10 @@ const Login = () => {
           alt="backGroundImg"
         />
       </div>
-      <form onSubmit={(e)=> e.preventDefault()} className=" my-16 sm:my-36 sm:w-4/12 absolute bg-black  mx-auto right-0 left-0 p-5 opacity-90 rounded-lg ">
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        className=" my-16 sm:my-36 sm:w-4/12 absolute bg-black  mx-auto right-0 left-0 p-5 opacity-90 rounded-lg "
+      >
         <h1 className="font-bold text-3xl p-2 text-white">
           {IsSingInFrom ? "Sign In" : "Sign Up"}
         </h1>
@@ -46,21 +101,18 @@ const Login = () => {
           type="text"
           placeholder="Email or mobile number  "
         />
-        
 
         <input
           ref={Ispassword}
           className="p-4 mt-4 block w-5/6 ml-5 text-white bg-gray-900"
           type="password"
           placeholder="Password"
-          
         />
         <p className="text-red-500 mt-1 text-lg text-center hover:underline">
           {ErrMessage}
         </p>
-        
 
-        <button 
+        <button
           onClick={handleButtonClick}
           className="h-12 rounded-lg   mt-4 bg-red-700  text-white w-5/6 ml-5 text-lg font-bold hover:bg-red-800"
         >
