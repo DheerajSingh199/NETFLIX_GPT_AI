@@ -1,44 +1,96 @@
-import React from "react";
-import { signOut } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import "remixicon/fonts/remixicon.css";
+import { addUser, removeUser } from "../utils/userSlice";
+import { LOGO } from "../utils/Constants";
+import { gptSearch } from "../utils/gptHandler";
 const Header = () => {
+  const [gptSerch,SetGptSearch] = useState(true)
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const user = useSelector((store) => store.user);
-  console.log(user);
 
   const logOutOnClick = () => {
     signOut(auth)
-      .then(() => {
-        navigate("/");
-      })
-      .catch((error) => {
-        navigate("/error");
-      });
+      .then(() => {})
+      .catch((error) => {});
   };
 
+  useEffect(() => {
+   const unsubscribe =  onAuthStateChanged(
+      auth,
+      (user) => {
+        if (user) {
+          const { uid, displayName, email, photoURL } = user;
+          dispatch(
+            addUser({
+              uid: uid,
+              displayName: displayName,
+              email: email,
+              photoURL: photoURL,
+            })
+          );
+          navigate("/browse");
+        } else {
+          dispatch(removeUser());
+          navigate("/");
+        }
+      },
+      
+    );
+    return () => unsubscribe()
+  },[]);
+
+const gptSearchHandel = () => {
+  dispatch(gptSearch())
+  SetGptSearch(!gptSerch)
+}
+
+
   return (
-    <div className="absolute z-10">
+    <div className="w-full absolute z-10 flex justify-between items-center py-4 px-10 text-white bg-gradient-to-b from-zinc-900">
       <img
-        className="w-48 "
-        src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+        className="w-20 h-10 "
+        src={LOGO}
         alt="logo"
       />
 
-      {user && <div>
-        <img className="w-28" src={user?.photoURL} alt="userIcon" />
+      {user && (
+        <>
+       
 
-        <button className="bg-slate-400" onClick={logOutOnClick}>
-          LogOut
-        </button>
-        <h1>
-          Hey You login To this page We Will Making this page More Beautiful
-          Give me Some Time{" "}
-        </h1>
-      </div>}
+        <div className="flex gap-4 ">
+       <button className="bg-red-800 px-4 py-2 rounded-lg font-semibold hover:bg-red-600" onClick={gptSearchHandel}>{ gptSerch ? "GPT Search" : "Home"}</button>
+          <img
+            className="w-10 h-10 rounded"
+            src={user?.photoURL}
+            alt="userIcon"
+          />
+
+          <div className="group relative text-white">
+            <div className="text-black text-4xl cursor-pointer">
+              <i className=" text-white ri-arrow-down-s-fill"></i>
+            </div>
+
+            <div className="absolute bg-zinc-200 rounded-md px-4 py-2 right-0 text-white hidden group-hover:block">
+              <h1 className="text-black py-2 text-center font-semibold whitespace-nowrap ">
+                {user?.displayName}
+              </h1>
+              <button
+                className="whitespace-nowrap rounded bg bg-red-500 px-4 py-2 text-center text-white font-semibold text-sm hover:bg-red-600 	"
+                onClick={logOutOnClick}
+              >
+                Sign Out
+              </button>
+            </div>
+          </div>
+        </div>
+        </>
+      )}
     </div>
   );
 };

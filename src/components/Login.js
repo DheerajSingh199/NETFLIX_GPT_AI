@@ -1,20 +1,20 @@
 import React, { useState, useRef } from "react";
 import Header from "./Header.js";
 import { Validate } from "../utils/Validate.js";
+import 'remixicon/fonts/remixicon.css'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase.js";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice.js";
+import { BACKGROUNDIMG } from "../utils/Constants.js";
 
 const Login = () => {
   const [IsSingInFrom, setIsSingInFrom] = useState(true);
   const [ErrMessage, setErrMessage] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch()
 
   const name = useRef(null);
@@ -53,7 +53,6 @@ const Login = () => {
             })
           );
 
-              navigate("/browse");
             })
             .catch((error) => {
               setErrMessage(error);
@@ -76,7 +75,6 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse");
 
           // ...
         })
@@ -98,7 +96,7 @@ const Login = () => {
       <div>
         <img
           className=" hidden sm:absolute sm:inline "
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/a99688ca-33c3-4099-9baa-07a2e2acb398/12b8ef67-2ff8-428c-8fc7-5388868ee28d/CH-en-20240520-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={BACKGROUNDIMG}
           alt="backGroundImg"
         />
       </div>
