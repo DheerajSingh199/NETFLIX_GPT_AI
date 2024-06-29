@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 import { MOVIE_OPTION } from "../utils/Constants";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { useDispatch, useSelector } from "react-redux";
 import { popularMovieData } from "../utils/movieSlicer";
 
@@ -10,18 +8,6 @@ const usePopular = () => {
   const dispatch = useDispatch();
   const popularMovieDatas = useSelector((store) => store.movie.popularMovie)
 
-=======
-=======
->>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
-import { useDispatch } from "react-redux";
-import { popularMovieData } from "../utils/movieSlicer";
-
-const usePopular = () => {
-  const dispatch = useDispatch();
-<<<<<<< HEAD
->>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
-=======
->>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
 
   const ApiCall = async () => {
     const data = await fetch(
@@ -33,16 +19,8 @@ const usePopular = () => {
   };
 
   useEffect(() => {
-<<<<<<< HEAD
-<<<<<<< HEAD
     if(!popularMovieDatas)   
       ApiCall();
-=======
-    ApiCall();
->>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
-=======
-    ApiCall();
->>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
   },[]);
 };
 

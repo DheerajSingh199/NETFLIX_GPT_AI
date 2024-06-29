@@ -2,15 +2,7 @@ import React from 'react'
 import { IMG_CDN } from '../utils/Constants'
 
 const MovieCards = ({posterPath}) => {
-<<<<<<< HEAD
-<<<<<<< HEAD
     if(!posterPath) return null
-=======
-    
->>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
-=======
-    
->>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
    
   return (
     <div>

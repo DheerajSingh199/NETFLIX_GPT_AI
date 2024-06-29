@@ -4,24 +4,9 @@ export const MOVIE_OPTION = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-<<<<<<< HEAD
-<<<<<<< HEAD
       Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MDFjOWEwOWRkOTU4Yzg1MmMxMDMwMDc5N2JiODQwMSIsInN1YiI6IjY2NzQ4MWFjMDhmMmQ5MTRkY2M0ZjcyNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2-_LJgL8gO2ZXcWR8DfxU_39zbPe87NvF7KW3OVntRQ",
     }
   };
   export const OPENAI_KEY = "sk-proj-knhsX6qoMjm2VNB0tSuNT3BlbkFJxmgcf1pyWRQDnedArJnC"
 
 export const IMG_CDN = "https://image.tmdb.org/t/p/w500"
-=======
-=======
->>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MDFjOWEwOWRkOTU4Yzg1MmMxMDMwMDc5N2JiODQwMSIsInN1YiI6IjY2NzQ4MWFjMDhmMmQ5MTRkY2M0ZjcyNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2-_LJgL8gO2ZXcWR8DfxU_39zbPe87NvF7KW3OVntRQ'
-    }
-  };
-
-<<<<<<< HEAD
-export const IMG_CDN = "https://image.tmdb.org/t/p/w500"
->>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
-=======
-export const IMG_CDN = "https://image.tmdb.org/t/p/w500"
->>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9

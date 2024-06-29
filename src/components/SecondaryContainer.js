@@ -4,22 +4,9 @@ import { useSelector } from "react-redux";
 
 const SecondaryContainer = () => {
   const movies = useSelector((store) => store.movie);
-<<<<<<< HEAD
-<<<<<<< HEAD
   return (
     <>
       <div className=" mt-[95%] md:-mt-48  bg-black">
-=======
-=======
->>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
-  console.log(movies);
-  return (
-    <>
-      <div className="-mt-48 bg-black ">
-<<<<<<< HEAD
->>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
-=======
->>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
         <MovieList tilte={"Popular on Netflix"} movieData={movies.popularMovie} />
 
         <MovieList tilte={"Now Playing"} movieData={movies.movieData} />
