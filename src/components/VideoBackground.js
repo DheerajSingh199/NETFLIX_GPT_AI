@@ -8,8 +8,12 @@ const VideoBackground = ({ id }) => {
   useMovieTrailer(id);
 
   return (
+<<<<<<< HEAD
    <div className="w-full h-full bg-black">
      <div className="overflow-hidden w-full">
+=======
+    <div className="overflow-hidden">
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
       <iframe
         className="w-full aspect-video object-cover "
         src={`https://www.youtube.com/embed/${trailerVideo?.key}?&autoplay=1&loop=1`}
@@ -19,7 +23,10 @@ const VideoBackground = ({ id }) => {
         
       ></iframe>
     </div>
+<<<<<<< HEAD
    </div>
+=======
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
   );
 };
 

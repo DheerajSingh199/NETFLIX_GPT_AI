@@ -1,16 +1,23 @@
 {
   "hosting": {
+<<<<<<< HEAD
     "public": "Build",
+=======
+    "public": "build",
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+<<<<<<< HEAD
     ],
     "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
       }
+=======
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
     ]
   }
 }

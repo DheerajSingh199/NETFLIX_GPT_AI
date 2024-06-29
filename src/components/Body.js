@@ -16,7 +16,10 @@ const Body = () => {
       path: "/browse",
       element: <Browse />,
     },
+<<<<<<< HEAD
   
+=======
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
   ]);
 
 
@@ -24,7 +27,11 @@ const Body = () => {
 
 
   return (
+<<<<<<< HEAD
     <div className="">
+=======
+    <div>
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
       <RouterProvider router={appRouter} />
     </div>
   );

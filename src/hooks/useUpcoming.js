@@ -1,11 +1,18 @@
 import { useEffect } from "react";
 import { MOVIE_OPTION } from "../utils/Constants";
+<<<<<<< HEAD
 import { useDispatch, useSelector } from "react-redux";
 import { upcomingMovieData } from "../utils/movieSlicer";
 
 const useUpcoming = () => {
   const upcomingMovieDatas   = useSelector((store) => store.movie.upcomingMovie)
 
+=======
+import { useDispatch } from "react-redux";
+import { upcomingMovieData } from "../utils/movieSlicer";
+
+const useUpcoming = () => {
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
   const dispatch = useDispatch();
 
   const ApiCall = async () => {
@@ -18,7 +25,10 @@ const useUpcoming = () => {
   };
 
   useEffect(() => {
+<<<<<<< HEAD
     if(!upcomingMovieDatas) 
+=======
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
     ApiCall();
   },[]);
 };
