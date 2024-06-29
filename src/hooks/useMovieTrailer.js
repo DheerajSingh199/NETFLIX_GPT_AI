@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import { MOVIE_OPTION } from "../utils/Constants";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useDispatch, useSelector } from "react-redux";
+=======
+import { useDispatch } from "react-redux";
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
 =======
 import { useDispatch } from "react-redux";
 >>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
@@ -11,7 +15,11 @@ const useMovieTrailer = (id) =>{
 
     const dispatch = useDispatch()
 <<<<<<< HEAD
+<<<<<<< HEAD
     const trailerMovieDatas = useSelector((store) => store.movie.trailerData)
+=======
+   
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
 =======
    
 >>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
@@ -27,6 +35,10 @@ const useMovieTrailer = (id) =>{
        });
        const data = filtterData.length === 0 ? json.results[0] : filtterData[0];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
 =======
    
 >>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
@@ -35,9 +47,13 @@ const useMovieTrailer = (id) =>{
    
      useEffect(() => {
 <<<<<<< HEAD
+<<<<<<< HEAD
       if(!trailerMovieDatas) 
          getMovieData();
       
+=======
+       getMovieData();
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
 =======
        getMovieData();
 >>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9

@@ -9,8 +9,12 @@ const VideoBackground = ({ id }) => {
 
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
    <div className="w-full h-full bg-black">
      <div className="overflow-hidden w-full">
+=======
+    <div className="overflow-hidden">
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
 =======
     <div className="overflow-hidden">
 >>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
@@ -24,7 +28,10 @@ const VideoBackground = ({ id }) => {
       ></iframe>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
    </div>
+=======
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
 =======
 >>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
   );

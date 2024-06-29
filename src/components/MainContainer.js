@@ -13,7 +13,11 @@ const MainContainer = () => {
 
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div >
+=======
+    <div>
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
 =======
     <div>
 >>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9

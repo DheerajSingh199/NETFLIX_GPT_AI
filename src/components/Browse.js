@@ -18,6 +18,7 @@ const Browse = () => {
 
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className="w-full h-full bg-black md:bg-transparent">
       <Header/>
       {showGptSearch?<GptSearch/> :<><MainContainer/>
@@ -26,10 +27,15 @@ const Browse = () => {
         
         </>}
 =======
+=======
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
     <div>
       <Header />
       {showGptSearch?<GptSearch/> :<><MainContainer/>
         <SecondaryContainer/></>}
+<<<<<<< HEAD
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
+=======
 >>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
       
     </div>

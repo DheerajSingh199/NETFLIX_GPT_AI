@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { MOVIE_OPTION } from "../utils/Constants";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useDispatch, useSelector } from "react-redux";
 import { topRatedData } from "../utils/movieSlicer";
 
@@ -8,10 +9,15 @@ const useTopRated = () => {
   const topRatedDatas = useSelector((store) => store.movie.topRated)
 
 =======
+=======
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
 import { useDispatch } from "react-redux";
 import { topRatedData } from "../utils/movieSlicer";
 
 const useTopRated = () => {
+<<<<<<< HEAD
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
+=======
 >>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
   const dispatch = useDispatch();
 
@@ -26,7 +32,10 @@ const useTopRated = () => {
 
   useEffect(() => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if(!topRatedDatas) 
+=======
+>>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
 =======
 >>>>>>> 17b776dcebb4c8597f60d42b112b1bc29c5a61a9
     ApiCall();
