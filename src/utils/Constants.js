@@ -7,6 +7,6 @@ export const MOVIE_OPTION = {
       Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MDFjOWEwOWRkOTU4Yzg1MmMxMDMwMDc5N2JiODQwMSIsInN1YiI6IjY2NzQ4MWFjMDhmMmQ5MTRkY2M0ZjcyNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2-_LJgL8gO2ZXcWR8DfxU_39zbPe87NvF7KW3OVntRQ",
     }
   };
-  export const OPENAI_KEY = "sk-proj-knhsX6qoMjm2VNB0tSuNT3BlbkFJxmgcf1pyWRQDnedArJnC"
+  // export const OPENAI_KEY = ""
 
 export const IMG_CDN = "https://image.tmdb.org/t/p/w500"
