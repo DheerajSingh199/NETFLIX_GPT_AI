@@ -7,6 +7,6 @@ export const MOVIE_OPTION = {
       Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MDFjOWEwOWRkOTU4Yzg1MmMxMDMwMDc5N2JiODQwMSIsInN1YiI6IjY2NzQ4MWFjMDhmMmQ5MTRkY2M0ZjcyNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2-_LJgL8gO2ZXcWR8DfxU_39zbPe87NvF7KW3OVntRQ",
     }
   };
-  // export const OPENAI_KEY = ""
+  export const OPENAI_KEY = "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"
 
 export const IMG_CDN = "https://image.tmdb.org/t/p/w500"
